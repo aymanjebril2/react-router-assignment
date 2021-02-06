@@ -18,7 +18,7 @@ function App() {
             <Link to="/planets">Planets</Link>
           </li>
           <li>
-            <Link to="/RandomPlane">RandomPlane</Link>
+            <Link to="/RandomPlanet">RandomPlanet</Link>
           </li>
         </nav>
       </header>
@@ -27,8 +27,8 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/planets" component={Planets} />
-          <Route path="/RandomPlane" component={RandomPlanet} />
-          <Route path="/PlanetDetail " component={PlanetDetail} />
+          <Route path="/RandomPlanet" component={RandomPlanet} />
+          <Route path="/PlanetDetail" component={PlanetDetail} />
         </Switch>
       </main>
     </div>
