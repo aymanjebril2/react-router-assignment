@@ -1,6 +1,7 @@
 import listData from "../service/listData";
 import { useState, useEffect } from "react";
-import PlanetDetail from "./PlanetDetail";
+
+import { Link } from "react-router-dom";
 function Planets(props) {
   const [list, setList] = useState([]);
 
@@ -17,8 +18,23 @@ function Planets(props) {
   return (
     <div>
       <ul>
-        {list.map((item, index) => {
-          return <PlanetDetail {...item} key={index} />;
+        {list.map((item) => {
+          return (
+            <li key={item.id}>
+              <Link
+                to={{
+                  pathname: "/PlanetDetail",
+                  state: {
+                    name: item.name,
+                    color: item.color,
+                    moon: item.num_moons,
+                  },
+                }}
+              >
+                {item.name}
+              </Link>
+            </li>
+          );
         })}
       </ul>
     </div>
